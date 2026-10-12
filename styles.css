@@ -60,7 +60,12 @@ a:focus-visible {
 
 .intro {
   padding-top: 0;
-  padding-bottom: 56px;
+  padding-bottom: 24px;
+  border-bottom: 0;
+}
+
+.intro + .section {
+  padding-top: 20px;
 }
 
 .intro-top,
@@ -83,7 +88,7 @@ h1 {
   margin: 0;
   font-family: var(--font-name);
   font-size: clamp(2.2rem, 5.5vw, 3.2rem);
-color: var(--accent);
+  color: var(--accent);
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -205,6 +210,12 @@ h3 {
   color: var(--light-muted);
   font-size: 0.83rem;
   white-space: nowrap;
+}
+
+.role-desc {
+  max-width: 720px;
+  margin: 10px 0 0;
+  color: var(--body-text);
 }
 
 ul {
@@ -440,7 +451,11 @@ footer {
   }
 
   .intro {
-    padding-bottom: 36px;
+    padding-bottom: 16px;
+  }
+
+  .intro + .section {
+    padding-top: 16px;
   }
 
   .intro-top,
@@ -508,5 +523,15 @@ footer {
 
   .section-heading {
     margin-bottom: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
   }
 }
