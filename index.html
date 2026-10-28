@@ -9,6 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem("theme"); } catch (e) {}
+    if (saved === "light") document.documentElement.setAttribute("data-theme", "light");
+  })();
+</script>
 </head>
 <body>
   <main class="page-shell">
@@ -27,48 +34,23 @@
         </div>
       </div>
 
-     <div class="intro-copy">
-      <p>
-        I am a <strong>Digital Engineer</strong> at Sonata Software, working on enterprise systems, batch processing and production support. I focused on ML and core AI alongside my B.Tech in Electronics and Electrical Engineering, and I now build AI and agent systems through end-to-end projects and open-source work. My interests include language and multimodal learning, inference, and agent memory.
-      </p>
-      <p>
-        Outside AI, I am also interested in video editing. You can find some of my work on
-        <a href="https://www.youtube.com/@SA0901-i3u" target="_blank" rel="noreferrer">YouTube</a>,
-      </p>
-    </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading"><h2>Experience</h2></div>
-      <article class="experience-block">
-        <div class="item-header">
-          <div>
-            <h3>Sonata Software Limited</h3>
-            <p class="item-subtitle">Digital Engineer, Bengaluru</p>
-          </div>
-          <span class="date">Jul 2024 – Present</span>
-        </div>
-        <div class="role-block">
-          <div class="role-title">
-            <h4>Dynamics AX Technical Consultant</h4>
-            <span>Sep 2024 – Jun 2025</span>
-          </div>
-          <p class="role-desc">
-            Automated FTP-sourced CSV ingestion and provisioning of 500+ retail stores and accounts using X++ classes and scheduled batch jobs, keeping organization hierarchies in sync. Contributed to Dynamics 365 CRM UAT and bug resolution; received the <strong>DNA Run for It</strong> and <strong>Peer 360</strong> awards.
-          </p>
-        </div>
-        <div class="role-block">
-          <div class="role-title">
-            <h4>Microsoft ACE Engineer — Dynamics 365 F&amp;O</h4>
-            <span>Aug 2025 – Feb 2026</span>
-          </div>
-          <p class="role-desc">
-            Investigated enterprise customer issues across resource scaling, environment diagnostics and batch processing, using SQL and Azure telemetry to analyze production incidents. Reproduced issues in customer environments and supported script- and configuration-level fixes.
-          </p>
-        </div>
-      </article>
-    </section>
-
+    <div class="intro-copy">
+      <div class="section-heading"><h2>About</h2></div>
+      <ul>
+        <li>Grew up in New Delhi, India.</li>
+        <li>Completed my B.Tech in Electronics and Electrical Engineering.</li>
+        <li>Working at Sonata Software as a <strong>Digital Engineer</strong>.</li>
+        <li>On the side, I work in AI/ML and am exploring agents and applied AI.</li>
+        <li>Interested in language, multimodal learning and inference on the core side.</li>
+    <li>
+      Outside tech, I edit videos. Some of my work is on
+      <a href="https://www.youtube.com/@SA0901-i3u" target="_blank" rel="noreferrer">YouTube</a>,
+      and I am the primary editor for
+      <a href="https://www.youtube.com/channel/UCrdeBQMrNV5DJarFRczhEzQ" target="_blank" rel="noreferrer">this channel</a>.
+    </li>
+  </ul>
+</div>
+    
     <section class="section">
       <div class="section-heading"><h2>Projects</h2></div>
       <div class="project-grid">
@@ -190,9 +172,40 @@
             </ul>
           </div>
         </article>
-
       </div>
     </section>
+    
+    <section class="section">
+      <div class="section-heading"><h2>Experience</h2></div>
+      <article class="experience-block">
+        <div class="item-header">
+          <div>
+            <h3>Sonata Software Limited</h3>
+            <p class="item-subtitle">Digital Engineer, Bengaluru</p>
+          </div>
+          <span class="date">Jul 2024 – Present</span>
+        </div>
+        <div class="role-block">
+          <div class="role-title">
+            <h4>Dynamics AX Technical Consultant</h4>
+            <span>Sep 2024 – Jun 2025</span>
+          </div>
+          <p class="role-desc">
+            Automated FTP-sourced CSV ingestion and provisioning of 500+ retail stores and accounts using X++ classes and scheduled batch jobs, keeping organization hierarchies in sync. Contributed to Dynamics 365 CRM UAT and bug resolution; received the <strong>DNA Run for It</strong> and <strong>Peer 360</strong> awards.
+          </p>
+        </div>
+        <div class="role-block">
+          <div class="role-title">
+            <h4>Microsoft ACE Engineer — Dynamics 365 F&amp;O</h4>
+            <span>Aug 2025 – Feb 2026</span>
+          </div>
+          <p class="role-desc">
+            Investigated enterprise customer issues across resource scaling, environment diagnostics and batch processing, using SQL and Azure telemetry to analyze production incidents. Reproduced issues in customer environments and supported script- and configuration-level fixes.
+          </p>
+        </div>
+      </article>
+    </section>
+
 
     <section class="section">
       <div class="section-heading"><h2>Education</h2></div>
@@ -209,16 +222,33 @@
     </section>
 
     <section class="section profiles-section">
-      <div class="section-heading"><h2>Profiles</h2></div>
+      <div class="section-heading"><h2>More</h2></div>
       <div class="profile-links">
-        <a href="https://www.linkedin.com/in/sitanshu-anmol-02b911223/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
         <a href="https://drive.google.com/file/d/1L2PIb0DGjgMot99dM4YLzr0C5eUhH33U/view?usp=drive_link" target="_blank" rel="noreferrer">CV <span>↗</span></a>
-        <a href="https://github.com/SitanshuA091" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
         <a href="https://www.kaggle.com/sitanshuanmol" target="_blank" rel="noreferrer">Kaggle <span>↗</span></a>
+        <a href="https://www.hackerrank.com/profile/sitanshu_anmol" target="_blank" rel="noreferrer">Hackerrank <span>↗</span></a>
       </div>
     </section>
 
     <footer><p>© 2026 Sitanshu Anmol</p></footer>
   </main>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+  </svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+<script>
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    var root = document.documentElement;
+    var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+</script>
 </body>
 </html>
