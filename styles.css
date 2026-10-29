@@ -212,11 +212,6 @@ h3 {
   white-space: nowrap;
 }
 
-.company {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
 .experience-block,
 .education-block {
