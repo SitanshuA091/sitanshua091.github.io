@@ -573,8 +573,17 @@ html[data-theme="light"] .project-media {
   font-size: 0.86rem;
 }
 
-.project-card-wide li a {
+.project-card-wide li > a {
   font-weight: 500;
+  transition: color 150ms ease;
+}
+
+.project-card-wide li > a:hover {
+  color: #615e70 !important;
+}
+
+html[data-theme="light"] .project-card-wide li > a:hover {
+  color: #0f8a6a !important;
 }
 
 .profiles-section {
