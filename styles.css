@@ -1,7 +1,7 @@
 :root {
   color-scheme: dark;
-  --background: #212121;
-  --surface: rgba(255, 255, 255, 0.035);
+  --background: #1c1c1c;
+  --surface: rgba(255, 255, 255, 0.030);
   --soft-background: #303030;
   --glow: rgba(50, 115, 235, 0.38);
   --text: #ededed;
@@ -20,7 +20,7 @@
   --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   --sidebar-width: 170px;
   --font-body: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-name: "Playfair Display", Georgia, serif;
+  --font-name: "Source Serif 4", Georgia, serif;
 }
 
 html[data-theme="light"] {
@@ -207,7 +207,7 @@ html[data-theme="light"] body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:   radial-gradient(rgba(40, 70, 130, 0.28) 1px, transparent 1.3px) 0 0 / 22px 22px,
+  background:   radial-gradient(rgba(40, 70, 130, 0.28) 1.02px, transparent 1.3px) 0 0 / 22px 22px,
   radial-gradient(ellipse 90vw 55vh at 50% 105%, rgba(55, 120, 240, 0.3), transparent 100%),
   linear-gradient(180deg, #b7ccf4 0%, #ffffff 55%);
 }
@@ -246,7 +246,7 @@ h1 {
   margin: 0;
   font-family: var(--font-name);
   font-size: clamp(2.2rem, 5.5vw, 3.2rem);
-  color: #cecbc5;
+  color: #ffffff;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.04em;
