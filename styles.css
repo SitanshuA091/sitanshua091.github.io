@@ -1,6 +1,6 @@
 :root {
   color-scheme: dark;
-  --background: #1c1c1c;
+  --background: #1b1b1b;
   --surface: rgba(255, 255, 255, 0.030);
   --soft-background: #303030;
   --glow: rgba(50, 115, 235, 0.38);
@@ -18,9 +18,11 @@
   --accent-border: rgba(255, 255, 255, 0.16);
   --link-hover: #ffffff;
   --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-  --sidebar-width: 160px;
+  --sidebar-width: 120px;
   --font-body: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-name: "Source Serif 4", Georgia, serif;
+  --font-name2: "Noticia Text", serif;
+
 }
 
 html[data-theme="light"] {
@@ -84,7 +86,7 @@ button:focus-visible {
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   column-gap: 48px;
-  width: min(calc(100% - 40px), 1160px);
+  width: min(calc(100% - 40px), 1100px);
   margin: 0 auto;
 }
 
@@ -176,7 +178,7 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1.3px) 0 0 / 22px 22px;
+  background: radial-gradient(rgba(96, 95, 95, 0.372) 1px, transparent 1.1px) 0 0 / 22px 22px;
 }
 
 .page-shell::before {
@@ -189,8 +191,8 @@ body::before {
   margin-top: calc(-1 * var(--pad-top));
   margin-bottom: calc(var(--pad-top) - 100vh);
   pointer-events: none;
-  background: radial-gradient(circle 16vmax at 38% 45%, rgba(50, 115, 235, 0.32), transparent 100%), 
-  radial-gradient(circle 14vmax at 62% 55%, rgba(63, 216, 227, 0.24), transparent 100%)
+  background: radial-gradient(circle 16vmax at 38% 45%, rgba(50, 115, 235, 0.26), transparent 100%), 
+  radial-gradient(circle 14vmax at 62% 55%, rgba(63, 216, 227, 0.19), transparent 100%)
 }
 
 html[data-theme="light"] body {
@@ -209,7 +211,7 @@ html[data-theme="light"] body::before {
   pointer-events: none;
   background:   radial-gradient(rgba(40, 70, 130, 0.28) 1.02px, transparent 1.6px) 0 0 / 22px 22px,
   radial-gradient(ellipse 90vw 55vh at 50% 105%, rgba(55, 120, 240, 0.3), transparent 100%),
-  linear-gradient(180deg, #b7ccf4 0%, #ffffff 55%);
+  linear-gradient(180deg, #adb1e6 0%, #ffffff 55%);
 }
 .section {
   padding: 36px 0;
@@ -247,27 +249,39 @@ h1 {
   font-family: var(--font-name);
   font-size: clamp(2.2rem, 5.5vw, 3.2rem);
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 550;
   line-height: 1;
   letter-spacing: -0.04em;
 }
 
 html[data-theme="light"] h1 {
-  color: #2b5a86;
-}
-
-.intro-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 8px;
-  font-size: 0.88rem;
-  font-weight: 500;
+  color: #0e1c84;
 }
 
 .intro-links a {
-  padding: 6px 13px;
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 14px;
   border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.intro-links .icon-link {
+  justify-content: center;
+  width: 34px;
+  padding: 0;
+}
+
+.intro-links .icon-link svg {
+  width: 16px;
+  height: 16px;
+}
+.intro-links a {
+  padding: 6px 13px;
+  border: 0.8px solid var(--border);
   border-radius: 999px;
   color: var(--text);
   transition: background 150ms ease, border-color 150ms ease;
@@ -438,11 +452,24 @@ li:last-child {
   border: 2px solid var(--border);
   border-radius: 14px;
   transition: border-color 150ms ease, box-shadow 150ms ease;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 200ms ease;
 }
 
 .project-card:hover {
   border-color: var(--border-strong);
   box-shadow: var(--shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: scale(1.03);
+    z-index: 3;
+  }
+
+  .project-card-wide:hover {
+    transform: none;
+    z-index: auto;
+  }
 }
 
 .project-card:focus-within {
@@ -799,7 +826,9 @@ footer {
   html {
     scroll-behavior: auto;
   }
-
+  .project-card:hover {
+  transform: none;
+}
   * {
     transition: none !important;
   }
