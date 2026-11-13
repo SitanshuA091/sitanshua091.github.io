@@ -6,7 +6,7 @@
 
 :root {
   color-scheme: dark;
-  --background: #1b1b1b;
+  --background: #151515;
   --surface: rgba(255, 255, 255, 0.030);
   --soft-background: #303030;
   --glow: rgba(50, 115, 235, 0.38);
@@ -328,8 +328,9 @@ h1 {
   margin: 0;
   font-family: var(--font-name);
   font-size: clamp(2.2rem, 5.5vw, 3.2rem);
-  color: #ffffff;
+  color: #d4cdb9;
   font-weight: 400;
+  font-style: italic;
   line-height: 1;
   letter-spacing: -0.04em;
 }
