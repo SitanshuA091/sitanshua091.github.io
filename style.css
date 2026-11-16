@@ -1,3 +1,4 @@
+
 @property --angle {
   syntax: "<angle>";
   inherits: false;
@@ -6,7 +7,7 @@
 
 :root {
   color-scheme: dark;
-  --background: #151515;
+  --background: #161616;
   --surface: rgba(255, 255, 255, 0.030);
   --soft-background: #303030;
   --glow: rgba(50, 115, 235, 0.38);
@@ -41,10 +42,10 @@
 
   --sidebar-width: 120px;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-
-  --font-body: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
   --font-name: "Source Serif 4", Georgia, serif;
-  --font-name2: "Noticia Text", serif;
+  --font-name2: "Computer Modern Serif", serif;
+  --font-name3: "STIX Two Text", serif;
 }
 
 html[data-theme="light"] {
@@ -392,6 +393,7 @@ html[data-theme="light"] body::before {
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
+  
 }
 
 .eyebrow {
@@ -403,11 +405,11 @@ html[data-theme="light"] body::before {
 
 h1 {
   margin: 0;
-  font-family: var(--font-name);
+  font-family: var(--font-name2);
   font-size: clamp(2.2rem, 5.5vw, 3.2rem);
-  font-style: italic;
-  color: #cfd2ea;
-  font-weight: 550;
+  font-style: normal;
+  color: #c8cdbb;
+  font-weight: 350;
   line-height: 1;
   letter-spacing: -0.04em;
 }
@@ -607,6 +609,68 @@ h3 {
   margin: 4px 0 0;
   color: var(--text-strong);
   font-size: 0.84rem;
+}
+
+/* =========================
+   Collapsible Experience
+========================= */
+
+.experience-details {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.experience-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+  list-style: none;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 200ms ease;
+}
+
+.experience-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.experience-details summary:hover {
+  color: var(--accent);
+}
+
+.experience-toggle {
+  font-size: 1.2rem;
+  color: var(--muted);
+  transition: transform 250ms var(--ease);
+}
+
+.experience-details[open] .experience-toggle {
+  transform: rotate(45deg);
+}
+
+.experience-content {
+  padding: 4px 0 14px 20px;
+  border-left: 1px solid var(--role-line);
+  animation: experience-reveal 250ms ease;
+}
+
+.experience-content .role-title {
+  align-items: center;
+}
+
+@keyframes experience-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 ul {
@@ -1267,6 +1331,6 @@ footer {
   }
 
   .project-card:hover {
-    transform: none;
+    transform:scale(1.05);
   }
 }

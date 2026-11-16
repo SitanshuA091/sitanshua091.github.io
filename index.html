@@ -12,6 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <!-- Computer Modern: traditional LaTeX default -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css" />
+   <!-- STIX Two Text: scientific publishing typography -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" />
   <link rel="stylesheet" href="style.css?v=9" />
   <script>
     (function () {
@@ -26,8 +30,8 @@
     <aside class="sidebar">
       <nav class="sidebar-nav" aria-label="Sections">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#education">Education</a>
       </nav>
 
@@ -72,6 +76,73 @@
           </p>
         </div>
       </section>
+      <section class="section" id="experience">
+        <div class="section-heading">
+          <h2>Experience</h2>
+        </div>
+        <article class="experience-block">
+          <div class="item-header">
+            <div class="company">
+              <img
+          class="company-logo"
+          src="assets/sonata_logo.jpg"
+          alt="Sonata Software logo"
+          style="height: 40px; width: auto; padding: 3px 5px; box-sizing: content-box; background: #ffffff; border: 1px solid #d0d0d0; border-radius: 6px; display: block; flex-shrink: 0;"
+        />
+        <div>
+          <h3>Sonata Software Limited</h3>
+          <p class="item-subtitle">Digital Engineer, Bengaluru</p>
+        </div>
+      </div>
+
+      <span class="date">Jul 2024 – Present</span>
+    </div>
+
+    <details class="experience-details">
+      <summary>
+        <span>Dynamics AX Technical Consultant</span>
+        <span class="experience-toggle">+</span>
+      </summary>
+
+      <div class="experience-content">
+        <div class="role-title">
+          <h4>Dynamics AX Technical Consultant</h4>
+          <span>Sep 2024 – Jun 2025</span>
+        </div>
+
+        <p class="role-desc">
+          Automated FTP-sourced CSV ingestion and provisioning of 500+ retail
+          stores and accounts using X++ classes and scheduled batch jobs.
+          Contributed to Dynamics 365 CRM UAT and bug resolution; received the
+          <strong>DNA Run for It</strong> and <strong>Peer 360</strong> awards.
+        </p>
+      </div>
+    </details>
+
+    <details class="experience-details">
+      <summary>
+        <span>Microsoft ACE Engineer — Dynamics 365 F&amp;O</span>
+        <span class="experience-toggle">+</span>
+      </summary>
+
+      <div class="experience-content">
+        <div class="role-title">
+          <h4>Microsoft ACE Engineer — Dynamics 365 F&amp;O</h4>
+          <span>Aug 2025 – Present</span>
+        </div>
+
+        <p class="role-desc">
+          Investigated enterprise customer issues across resource scaling,
+          environment diagnostics and batch processing, using SQL and Azure
+          telemetry. Resolved issues in customer environments and supported
+          script- and configuration-level fixes.
+        </p>
+      </div>
+    </details>
+
+  </article>
+</section>
+
 
       <section class="section" id="projects">
         <div class="section-heading"><h2>Projects</h2></div>
@@ -203,39 +274,7 @@
         </div>
       </section>
 
-      <section class="section" id="experience">
-        <div class="section-heading"><h2>Experience</h2></div>
-        <article class="experience-block">
-          <div class="item-header">
-            <div class="company">
-              <img class="company-logo" src="assets/sonata_logo.jpg" alt="Sonata Software logo" style="height: 40px; width: auto; padding: 3px 5px; box-sizing: content-box; background: #ffffff; border: 1px solid #d0d0d0; border-radius: 6px; display: block; flex-shrink: 0;" />
-              <div>
-                <h3>Sonata Software Limited</h3>
-                <p class="item-subtitle">Digital Engineer, Bengaluru</p>
-              </div>
-            </div>
-            <span class="date">Jul 2024 – Present</span>
-          </div>
-          <div class="role-block">
-            <div class="role-title">
-              <h4>Dynamics AX Technical Consultant</h4>
-              <span>Sep 2024 – Jun 2025</span>
-            </div>
-            <p class="role-desc">
-              Automated FTP-sourced CSV ingestion and provisioning of 500+ retail stores and accounts using X++ classes and scheduled batch jobs. Contributed to Dynamics 365 CRM UAT and bug resolution; received the <strong>DNA Run for It</strong> and <strong>Peer 360</strong> awards.
-            </p>
-          </div>
-          <div class="role-block">
-            <div class="role-title">
-              <h4>Microsoft ACE Engineer — Dynamics 365 F&amp;O</h4>
-              <span>Aug 2025 – present</span>
-            </div>
-            <p class="role-desc">
-              Investigated enterprise customer issues across resource scaling, environment diagnostics and batch processing, using SQL and Azure telemetry. Resolved issues in customer environments and supported script- and configuration-level fixes.
-            </p>
-          </div>
-        </article>
-      </section>
+
 
       <section class="section" id="education">
         <div class="section-heading"><h2>Education</h2></div>
