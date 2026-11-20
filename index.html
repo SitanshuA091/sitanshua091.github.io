@@ -8,8 +8,10 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Computer Modern: traditional LaTeX default, used for the h1 name -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css" />
+  <link rel="stylesheet" href="style.css?v=10" />
   <script>
     (function () {
       var saved = null;
@@ -18,13 +20,20 @@
     })();
   </script>
 </head>
-<body>
+<body class="is-loading">
+  <div id="page-loader">
+    <p class="loader-text">
+      Loading<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span>
+    </p>
+  </div>
+
   <div class="layout">
     <aside class="sidebar">
       <nav class="sidebar-nav" aria-label="Sections">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#education">Education</a>
       </nav>
 
@@ -43,12 +52,20 @@
     <main class="page-shell">
       <section class="intro section" id="about">
         <div class="intro-top">
-          <div>
-            <p class="eyebrow">Machine learning, applied AI and backend systems</p>
-            <h1>Sitanshu Anmol</h1>
+          <div class="intro-identity">
+            <img
+              class="profile-pic"
+              src="assets/profile.jpg"
+              alt="Sitanshu Anmol"
+              onerror="this.remove()"
+            />
+            <div>
+              <p class="eyebrow">Machine learning, applied AI and backend systems</p>
+              <h1>Sitanshu Anmol</h1>
+            </div>
           </div>
 
-            <div class="intro-links">
+          <div class="intro-links">
             <a class="icon-link" href="mailto:sitanshu.anmol@gmail.com" aria-label="Email" title="Email">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg>
             </a>
@@ -58,16 +75,86 @@
             <a class="icon-link" href="https://www.linkedin.com/in/sitanshu-anmol-02b911223/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-            <a href="https://drive.google.com/file/d/1L2PIb0DGjgMot99dM4YLzr0C5eUhH33U/view?usp=drive_link" target="_blank" rel="noreferrer">CV</a>
+            <a class="icon-link" href="https://drive.google.com/file/d/1L2PIb0DGjgMot99dM4YLzr0C5eUhH33U/view?usp=drive_link" target="_blank" rel="noreferrer" aria-label="CV" title="CV">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h3"/></svg>
+            </a>
           </div>
-          
-        </div><div class="intro-copy">
+        </div>
+
+        <div class="intro-copy">
           <div class="section-heading"><h2>About</h2></div>
           <p>
             Hey, I'm Sitanshu, a Digital Engineer at Sonata Software and a 2023 B.Tech Graduate, born in New Delhi. On the side, I build in AI/ML, exploring agents and applied AI, with a soft spot for multimodal learning, inference and also the infrastructure side : tooling and libraries behind ML. Outside tech, I also edit videos.
           </p>
         </div>
       </section>
+      <section class="section" id="experience">
+        <div class="section-heading">
+          <h2>Experience</h2>
+        </div>
+        <article class="experience-block">
+          <div class="item-header">
+            <div class="company">
+              <img
+          class="company-logo"
+          src="assets/sonata_logo.jpg"
+          alt="Sonata Software logo"
+          style="height: 40px; width: auto; padding: 3px 5px; box-sizing: content-box; background: #ffffff; border: 1px solid #d0d0d0; border-radius: 6px; display: block; flex-shrink: 0;"
+        />
+        <div>
+          <h3>Sonata Software Limited</h3>
+          <p class="item-subtitle">Digital Engineer, Bengaluru</p>
+        </div>
+      </div>
+
+      <span class="date">Jul 2024 – Present</span>
+    </div>
+
+    <details class="experience-details">
+      <summary>
+        <span>Dynamics AX Technical Consultant</span>
+        <span class="experience-toggle">+</span>
+      </summary>
+
+      <div class="experience-content">
+        <div class="role-title">
+          <h4>Dynamics AX Technical Consultant</h4>
+          <span>Sep 2024 – Jun 2025</span>
+        </div>
+
+        <p class="role-desc">
+          Automated FTP-sourced CSV ingestion and provisioning of 500+ retail
+          stores and accounts using X++ classes and scheduled batch jobs.
+          Contributed to Dynamics 365 CRM UAT and bug resolution; received the
+          <strong>DNA Run for It</strong> and <strong>Peer 360</strong> awards.
+        </p>
+      </div>
+    </details>
+
+    <details class="experience-details">
+      <summary>
+        <span>Microsoft ACE Engineer — Dynamics 365 F&amp;O</span>
+        <span class="experience-toggle">+</span>
+      </summary>
+
+      <div class="experience-content">
+        <div class="role-title">
+          <h4>Microsoft ACE Engineer — Dynamics 365 F&amp;O</h4>
+          <span>Aug 2025 – Present</span>
+        </div>
+
+        <p class="role-desc">
+          Investigated enterprise customer issues across resource scaling,
+          environment diagnostics and batch processing, using SQL and Azure
+          telemetry. Resolved issues in customer environments and supported
+          script- and configuration-level fixes.
+        </p>
+      </div>
+    </details>
+
+  </article>
+</section>
+
       <section class="section" id="projects">
         <div class="section-heading"><h2>Projects</h2></div>
         <div class="project-grid">
@@ -78,9 +165,7 @@
             </div>
             <div class="project-body">
               <div class="project-title-row">
-                <h3>
-                  <a class="card-link" href="https://github.com/SitanshuA091/DataScope" target="_blank" rel="noreferrer">DataScope</a>
-                </h3>
+                <h3><a class="card-link" href="https://github.com/SitanshuA091/DataScope" target="_blank" rel="noreferrer">DataScope</a></h3>
                 <span class="tag">EDA agent platform</span>
                 <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
@@ -100,9 +185,7 @@
             </div>
             <div class="project-body">
               <div class="project-title-row">
-                <h3>
-                  <a class="card-link" href="https://pypi.org/project/memlib-ai/" target="_blank" rel="noreferrer">memlib-ai</a>
-                </h3>
+                <h3><a class="card-link" href="https://pypi.org/project/memlib-ai/" target="_blank" rel="noreferrer">memlib-ai</a></h3>
                 <span class="tag">Python package</span>
                 <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
@@ -122,9 +205,7 @@
             </div>
             <div class="project-body">
               <div class="project-title-row">
-                <h3>
-                  <a class="card-link" href="https://research-planner.streamlit.app/" target="_blank" rel="noreferrer">Research Planner</a>
-                </h3>
+                <h3><a class="card-link" href="https://research-planner.streamlit.app/" target="_blank" rel="noreferrer">Research Planner</a></h3>
                 <span class="tag">Multi-agent system</span>
                 <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
@@ -134,7 +215,7 @@
                 <a href="https://github.com/SitanshuA091/Multi-Agent-Research-Planner/" target="_blank" rel="noreferrer" aria-label="Research Planner on GitHub">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 </a>
-                <a href="https://youtu.be/tRo23fk7k6s?si=4EfXHEmJefi-IIgl" target="_blank" rel="noreferrer" aria-label="Research Planner demo on YouTube"title="Application Demo">
+                <a href="https://youtu.be/tRo23fk7k6s?si=4EfXHEmJefi-IIgl" target="_blank" rel="noreferrer" aria-label="Research Planner demo on YouTube" title="Application Demo">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
               </div>
@@ -147,9 +228,7 @@
             </div>
             <div class="project-body">
               <div class="project-title-row">
-                <h3>
-                  <a class="card-link" href="https://github.com/SitanshuA091/tiny-qwen" target="_blank" rel="noreferrer">Tiny-Qwen</a>
-                </h3>
+                <h3><a class="card-link" href="https://github.com/SitanshuA091/tiny-qwen" target="_blank" rel="noreferrer">Tiny-Qwen</a></h3>
                 <span class="tag">LLM from scratch</span>
                 <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
@@ -163,69 +242,88 @@
                   <span class="icon-emoji" aria-hidden="true">🤗</span>
                 </a>
               </div>
-            </article>
-
-          <article class="project-card project-card-wide">
-            <div class="project-body">
-              <div class="project-title-row">
-                <h3>Other Projects</h3>
-              </div>
-              <p class="project-stack">ML, NLP, FAISS, FastAPI, React, Streamlit</p>
-              <ul>
-                <li>
-                  <a href="https://pypi.org/project/vectorbench-faiss/" target="_blank" rel="noreferrer">VectorBench</a>
-                  — Vector-search benchmarking library for comparing FAISS index types across recall@k, latency and memory, with hybrid BM25 and dense retrieval through reciprocal rank fusion.
-                </li>
-                <li>
-                  <a href="https://github.com/SitanshuA091/Neural-Machine-Translation" target="_blank" rel="noreferrer">Neural Machine Translation</a>
-                  — French-to-English seq2seq translation model with Luong and scaled dot-product attention.
-                </li>
-                <li>
-                  <a href="https://youtu.be/ygWLUla1gFg" target="_blank" rel="noreferrer">DBChat</a>
-                  — Natural-language interface for querying MySQL and returning generated SQL with explanations.
-                </li>
-                <li>
-                  <a href="https://youtu.be/XpRQ9Crsz6Q" target="_blank" rel="noreferrer">FaceApproval</a>
-                  — Facial-recognition attendance system using React, FastAPI, OpenCV LBPH, and Google Sheets.
-                </li>
-              </ul>
             </div>
           </article>
+
+          <!-- One collapsible card; projects are arranged as two vertical columns. -->
+          <details class="project-card project-card-wide other-projects">
+            <summary class="other-projects-summary">
+              <div class="project-body">
+                <div class="project-title-row">
+                  <h3>Other Projects</h3>
+                  <span class="other-projects-toggle-icon" aria-hidden="true">+</span>
+                </div>
+                <p class="project-stack">ML, NLP, FAISS, FastAPI, React, Streamlit</p>
+              </div>
+            </summary>
+
+            <div class="other-projects-content">
+              <div class="other-projects-grid">
+                <div class="other-project-item">
+                  <h4><a href="https://pypi.org/project/vectorbench-faiss/" target="_blank" rel="noreferrer">VectorBench</a></h4>
+                  <p>Vector-search benchmarking library for comparing FAISS index types across recall@k, latency and memory, with hybrid BM25 and dense retrieval through reciprocal rank fusion.</p>
+                </div>
+
+                <div class="other-project-item">
+                  <h4><a href="https://github.com/SitanshuA091/Neural-Machine-Translation" target="_blank" rel="noreferrer">Neural Machine Translation</a></h4>
+                  <p>French-to-English seq2seq translation model with Luong and scaled dot-product attention.</p>
+                </div>
+
+                <div class="other-project-item">
+                  <h4><a href="https://youtu.be/ygWLUla1gFg" target="_blank" rel="noreferrer">DBChat</a></h4>
+                  <p>Natural-language interface for querying MySQL and returning generated SQL with explanations.</p>
+                </div>
+
+                <div class="other-project-item">
+                  <h4><a href="https://youtu.be/XpRQ9Crsz6Q" target="_blank" rel="noreferrer">FaceApproval</a></h4>
+                  <p>Facial-recognition attendance system using React, FastAPI, OpenCV LBPH, and Google Sheets.</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
         </div>
       </section>
 
-      <section class="section" id="experience">
-        <div class="section-heading"><h2>Experience</h2></div>
-        <article class="experience-block">
-          <div class="item-header">
-            <div class="company">
-              <img class="company-logo" src="assets/sonata_logo.jpg" alt="Sonata Software logo" style="height: 40px; width: auto; padding: 3px 5px; box-sizing: content-box; background: #ffffff; border: 1px solid #d0d0d0; border-radius: 6px; display: block; flex-shrink: 0;" />
-              <div>
-                <h3>Sonata Software Limited</h3>
-                <p class="item-subtitle">Digital Engineer, Bengaluru</p>
-              </div>
+      <section class="section" id="skills">
+        <div class="section-heading"><h2>Skills</h2></div>
+        <div class="skills-grid">
+          <div class="skills-group">
+            <h3>Programming Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">SQL</span>
             </div>
-            <span class="date">Jul 2024 – Present</span>
           </div>
-          <div class="role-block">
-            <div class="role-title">
-              <h4>Dynamics AX Technical Consultant</h4>
-              <span>Sep 2024 – Jun 2025</span>
+
+          <div class="skills-group">
+            <h3>Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Neo4j</span>
+              <span class="skill-tag">Weights &amp; Biases</span>
             </div>
-            <p class="role-desc">
-              Automated FTP-sourced CSV ingestion and provisioning of 500+ retail stores and accounts using X++ classes and scheduled batch jobs. Contributed to Dynamics 365 CRM UAT and bug resolution; received the <strong>DNA Run for It</strong> and <strong>Peer 360</strong> awards.
-            </p>
           </div>
-          <div class="role-block">
-            <div class="role-title">
-              <h4>Microsoft ACE Engineer — Dynamics 365 F&amp;O</h4>
-              <span>Aug 2025 – present</span>
+
+          <div class="skills-group">
+            <h3>Libraries &amp; Frameworks</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Transformers</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">LangGraph</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Pytest</span>
             </div>
-            <p class="role-desc">
-              Investigated enterprise customer issues across resource scaling, environment diagnostics and batch processing, using SQL and Azure telemetry. Resolved issues in customer environments and supported script- and configuration-level fixes.
-            </p>
           </div>
-        </article>
+        </div>
       </section>
 
       <section class="section" id="education">
@@ -248,7 +346,7 @@
           <a href="https://huggingface.co/SA0901" target="_blank" rel="noreferrer">HuggingFace<span>↗</span></a>
           <a href="https://www.kaggle.com/sitanshuanmol" target="_blank" rel="noreferrer">Kaggle <span>↗</span></a>
           <a href="https://www.hackerrank.com/profile/sitanshu_anmol" target="_blank" rel="noreferrer">Hackerrank <span>↗</span></a>
-                    <a href="https://www.youtube.com/@SA0901-i3u" target="_blank" rel="noreferrer">YouTube <span>↗</span></a>
+          <a href="https://www.youtube.com/@SA0901-i3u" target="_blank" rel="noreferrer">YouTube <span>↗</span></a>
         </div>
       </section>
 
@@ -296,6 +394,44 @@
       window.addEventListener("scroll", update, { passive: true });
       window.addEventListener("resize", update);
       update();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var loader = document.getElementById("page-loader");
+      var revealEls = [];
+
+      document.querySelectorAll(".sidebar, .section").forEach(function (el) {
+        el.classList.add("reveal-on-load");
+        revealEls.push(el);
+      });
+
+      document.querySelectorAll(".project-card").forEach(function (el) {
+        el.classList.add("reveal-on-load");
+        revealEls.push(el);
+      });
+
+      function revealAll() {
+        revealEls.forEach(function (el, i) {
+          setTimeout(function () {
+            el.classList.add("is-visible");
+          }, i * 80);
+        });
+      }
+
+      function hideLoader() {
+        document.body.classList.remove("is-loading");
+        loader.classList.add("loader-hidden");
+        revealAll();
+      }
+
+      // artificial minimum delay so the loader is actually visible while
+      // experimenting -- drop the setTimeout and call hideLoader() directly
+      // once you're happy and just want it tied to real load time
+      window.addEventListener("load", function () {
+        setTimeout(hideLoader, 900);
+      });
     })();
   </script>
 </body>
