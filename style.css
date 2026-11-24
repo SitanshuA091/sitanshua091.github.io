@@ -8,12 +8,12 @@
   --background: #090e0f;
   --surface: rgba(255, 255, 255, 0.03);
   --soft-background: #121a1b;
-  --text: #ededed;
-  --text-strong: #fff;
-  --body-text: #d4d4d4;
-  --muted: #a3a3a3;
-  --light-muted: #7a7a7a;
-  --heading-color: #7a7a7a;
+  --text: rgba(237, 237, 237, 0.92);
+  --text-strong: rgba(255, 255, 255, 0.92);
+  --body-text: rgba(212, 212, 212, 0.88);
+  --muted: rgba(163, 163, 163, 0.9);
+  --light-muted: rgba(122, 122, 122, 0.9);
+  --heading-color: rgba(122, 122, 122, 0.9);
   --border: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.2);
   --role-line: rgba(255, 255, 255, 0.12);
@@ -35,22 +35,23 @@
     0 18px 44px rgba(0, 0, 0, 0.45);
   --ring-1: #3a82ff;
   --ring-2: #3fd8e3;
-  --sidebar-width: 110px;
+  --sidebar-width: 130px;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --font-body: "Space Grotesk", sans-serif;
-  --font-name: "Computer Modern Serif", serif;
+  --font-body2: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  --font-body: var(--font-body2);
+  --font-name: "Computer Modern Sans", sans-serif;
 }
 html[data-theme="light"] {
   color-scheme: light;
   --background: #fff;
   --surface: rgba(255, 255, 255, 0.6);
   --soft-background: #f6f7f8;
-  --text: #1a1c1f;
-  --text-strong: #3b3e43;
-  --body-text: #3b3e43;
-  --muted: #62666d;
-  --light-muted: #8a8e95;
-  --heading-color: #1a1c1f;
+  --text: rgba(26, 28, 31, 0.92);
+  --text-strong: rgba(59, 62, 67, 0.92);
+  --body-text: rgba(59, 62, 67, 0.88);
+  --muted: rgba(98, 102, 109, 0.9);
+  --light-muted: rgba(138, 142, 149, 0.9);
+  --heading-color: rgba(26, 28, 31, 0.9);
   --border: #e6e7e9;
   --border-strong: #cdd0d4;
   --role-line: #d8d9db;
@@ -92,6 +93,8 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   font-size: 15.5px;
+  font-weight: 350;
+  letter-spacing: 0.025em;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
@@ -140,7 +143,7 @@ button:focus-visible {
   color: #ededed;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -248,7 +251,7 @@ body.is-loading .layout {
   border-radius: 0 8px 8px 0;
   color: var(--muted);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   transition:
     color 200ms ease,
     border-color 200ms ease,
@@ -276,7 +279,7 @@ body.is-loading .layout {
   color: var(--muted);
   font-family: inherit;
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition:
     background 200ms ease,
@@ -452,20 +455,11 @@ html[data-theme="light"] body::before {
   align-items: center;
   gap: 18px;
 }
-.profile-pic {
-  flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--border-strong);
-  box-shadow: var(--shadow);
-}
 .eyebrow {
-  margin: 0 0 12px;
+  margin: 14px 0 0;
   color: var(--muted);
   font-size: 0.92rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 h1 {
   margin: 0;
@@ -489,7 +483,7 @@ html[data-theme="light"] h1 {
   align-items: center;
   gap: 12px;
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 .intro-links a {
   display: inline-flex;
@@ -568,7 +562,7 @@ html[data-theme="light"] h1 {
   margin: 0;
   color: var(--heading-color);
   font-size: 1.15rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.01em;
 }
 /* =========================
@@ -577,7 +571,7 @@ html[data-theme="light"] h1 {
 h3 {
   margin: 0;
   font-size: 0.98rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.015em;
 }
 .item-subtitle,
@@ -594,7 +588,7 @@ h3 {
 .date {
   color: var(--accent);
   font-size: 0.74rem;
-  font-weight: 500;
+  font-weight: 400;
   white-space: nowrap;
 }
 /* =========================
@@ -618,7 +612,7 @@ h3 {
 .role-title h4 {
   margin: 0;
   font-size: 0.86rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .role-title span {
   color: var(--light-muted);
@@ -648,7 +642,7 @@ h3 {
   list-style: none;
   color: var(--text);
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 400;
   transition: color 200ms ease;
 }
 .experience-details summary::-webkit-details-marker {
@@ -725,7 +719,7 @@ li:last-child {
   border-radius: 999px;
   color: var(--text-strong);
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 400;
   transition:
     border-color 200ms ease,
     transform 250ms var(--ease);
@@ -872,7 +866,7 @@ html[data-theme="light"] .project-media {
   border-radius: 6px;
   color: var(--accent);
   font-size: 0.68rem;
-  font-weight: 500;
+  font-weight: 400;
   white-space: nowrap;
 }
 .arrow {
@@ -1026,7 +1020,7 @@ html[data-theme="light"] .project-media {
 .other-project-item h4 {
   margin: 0 0 5px;
   font-size: 0.92rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .other-project-item h4 a {
   color: var(--text);
@@ -1065,7 +1059,7 @@ html[data-theme="light"] .project-media {
   border-radius: 8px;
   color: var(--text);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   transition:
     background 200ms ease,
     border-color 200ms ease,
@@ -1165,7 +1159,7 @@ footer {
 \========================= */
 @media (max-width: 720px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
   .section {
     padding: 28px 0;
@@ -1182,16 +1176,25 @@ footer {
     flex-direction: column;
     gap: 8px;
   }
+  .intro-top {
+    gap: 20px;
+  }
+  .intro-identity {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .intro-identity > div {
+    width: 100%;
+    min-width: 0;
+  }
   .intro-links {
     padding-top: 0;
   }
-  .profile-pic {
-    width: 56px;
-    height: 56px;
-  }
   .intro-copy {
     margin-top: 24px;
-    font-size: 0.88rem;
+    font-size: 1rem;
   }
   .date,
   .role-title span {
@@ -1342,14 +1345,8 @@ footer {
     flex-direction: column;
     gap: 17px;
   }
-  .profile-pic {
-    width: 58px;
-    height: 58px;
-    border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: none;
-  }
   .eyebrow {
-    margin-bottom: 14px;
+    margin-top: 14px;
     font-size: 0.78rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1399,7 +1396,7 @@ footer {
   .section-heading h2 {
     color: var(--muted);
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
@@ -1491,5 +1488,62 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .content-panel.is-active {
     animation: none;
+  }
+}
+
+/* Keep the name consistent across desktop, zoom levels, and mobile. */
+h1 {
+  font-family: var(--font-name);
+  font-size: clamp(2.25rem, 7.4vw, 6.8rem);
+  font-weight: 300;
+  letter-spacing: -0.075em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Mobile keeps the desktop typography and breathing room, with the nav on top. */
+@media (max-width: 860px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: auto;
+    min-height: 52px;
+  }
+
+  .page-shell {
+    --pad-top: 24px;
+    padding: var(--pad-top) 20px 48px;
+  }
+
+  .section {
+    padding: 34px 0;
+  }
+
+  .intro {
+    padding-bottom: 28px;
+  }
+
+  .intro-copy {
+    margin-top: 24px;
+    font-size: 1rem;
+  }
+
+  .intro-copy p {
+    font-size: 1rem;
+    line-height: 1.8;
+    letter-spacing: 0.025em;
+  }
+
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: clamp(1.75rem, 9vw, 2.6rem);
+    letter-spacing: -0.055em;
+  }
+
+  .page-shell {
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
