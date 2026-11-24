@@ -206,7 +206,7 @@ body.is-loading .layout {
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   column-gap: 48px;
-  width: min(calc(100% - 40px), 1100px);
+  width: min(calc(100% - 40px), 960px);
   margin: 0 auto;
 }
 
@@ -862,7 +862,7 @@ li:last-child {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 /* =========================
@@ -873,7 +873,7 @@ li:last-child {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 8px;
+  padding: 6px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -930,7 +930,7 @@ li:last-child {
 @media (hover: hover) and (pointer: fine) {
   .project-card:not(.project-card-wide):hover {
     z-index: 3;
-    transform: translateY(-4px) scale(1.1);
+    transform: translateY(-2px) scale(1.02);
     border-color: transparent;
     box-shadow: var(--card-shadow-hover);
   }
@@ -963,7 +963,7 @@ html[data-theme="light"] .project-media {
 }
 
 .project-card:not(.project-card-wide):hover .project-media img {
-  transform: scale(1.055);
+  transform: scale(1.02);
   filter: saturate(1.1);
 }
 
@@ -975,7 +975,7 @@ html[data-theme="light"] .project-media {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 10px 8px 6px;
+  padding: 8px 6px 4px;
 }
 
 .project-title-row {
@@ -990,16 +990,10 @@ html[data-theme="light"] .project-media {
 
 .card-link {
   color: var(--text);
-  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
-  transition: background-size 300ms var(--ease);
 }
 
 .card-link:hover {
   color: var(--text);
-}
-
-.project-card:not(.project-card-wide):hover .card-link {
-  background-size: 100% 1px;
 }
 
 .card-link::after {
@@ -1112,6 +1106,7 @@ html[data-theme="light"] .project-media {
 
 .other-projects {
   display: block;
+  grid-column: 1 / -1;
   overflow: hidden;
 }
 
@@ -1426,7 +1421,7 @@ footer {
   }
 
   .project-card-wide {
-    grid-column: auto;
+    grid-column: 1 / -1;
   }
 
   .project-title-row {
