@@ -13,6 +13,145 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css" />
   <link rel="stylesheet" href="style.css?v=14" />
 
+  <style>
+    /* Homepage-only Building & Contributing block */
+    .home-extras {
+      margin-top: clamp(2rem, 4vw, 3rem);
+      padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+      border-top: 1px solid var(--border-color, rgba(128, 128, 128, 0.28));
+    }
+
+    /* Explicitly hide homepage extras whenever another panel is active. */
+    .home-extras[hidden] {
+      display: none !important;
+    }
+
+    .home-extras-heading {
+      margin-bottom: 1rem;
+    }
+
+    .home-activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .home-activity-item {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.25rem;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid var(--border-color, rgba(128, 128, 128, 0.28));
+      border-radius: 10px;
+      background: var(--surface-muted, rgba(128, 128, 128, 0.045));
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .home-activity-item[href]:hover {
+      transform: translateY(-2px);
+      border-color: currentColor;
+    }
+
+    .home-activity-value {
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: -0.035em;
+    }
+
+    .home-activity-label {
+      font-size: 0.76rem;
+      line-height: 1.35;
+      opacity: 0.72;
+    }
+
+    .home-activity-links {
+      font-size: 0.68rem;
+      line-height: 1.35;
+      opacity: 0.76;
+    }
+
+    .home-activity-links a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: currentColor;
+      text-underline-offset: 2px;
+    }
+
+    .home-interests {
+      margin-top: 1.4rem;
+    }
+
+    .home-interests-title {
+      margin: 0 0 0.8rem;
+      font-size: 0.82rem;
+      line-height: 1.3;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    .home-interest-list {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .home-interest-row {
+      display: grid;
+      grid-template-columns: 105px minmax(0, 1fr);
+      align-items: start;
+      gap: 0.6rem;
+    }
+
+    .home-interest-label {
+      padding-top: 0.24rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0.82;
+    }
+
+    .home-interest-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .home-interest-topics span {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.58rem;
+      border: 1px solid var(--border-color, rgba(128, 128, 128, 0.25));
+      border-radius: 999px;
+      font-size: 0.75rem;
+      line-height: 1.35;
+      opacity: 0.88;
+    }
+
+    @media (max-width: 600px) {
+      .home-activity-grid {
+        gap: 0.5rem;
+      }
+
+      .home-activity-item {
+        padding: 0.7rem 0.65rem;
+      }
+
+      .home-activity-label {
+        font-size: 0.68rem;
+      }
+
+      .home-interest-row {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+      }
+    }
+  </style>
+
   <script>
     (function () {
       var saved = null;
@@ -140,6 +279,64 @@
             <span class="skill-tag">SQL</span>
           </div>
         </div>
+
+        <!-- This block belongs to the About panel, so it is hidden automatically
+             whenever Experience, Projects, or Education is selected. -->
+        <section class="home-extras" aria-labelledby="home-extras-title" hidden>
+          <div class="section-heading home-extras-heading">
+            <h2 id="home-extras-title">Building &amp; Contributing</h2>
+          </div>
+
+          <div class="home-activity-grid" aria-label="Project and open-source snapshot">
+            <div class="home-activity-item">
+              <span class="home-activity-value">04</span>
+              <span class="home-activity-label">Featured projects</span>
+            </div>
+            <div class="home-activity-item">
+              <span class="home-activity-value">02</span>
+              <span class="home-activity-label">PyPI packages</span>
+              <span class="home-activity-links">
+                <a href="https://pypi.org/project/memlib-ai/" target="_blank" rel="noreferrer">memlib-ai</a> ·
+                <a href="https://pypi.org/project/vectorbench-faiss/" target="_blank" rel="noreferrer">VectorBench</a>
+              </span>
+            </div>
+            <a class="home-activity-item" href="https://github.com/SitanshuA091" target="_blank" rel="noreferrer">
+              <span class="home-activity-value">GitHub</span>
+              <span class="home-activity-label">Open-source activity ↗</span>
+            </a>
+          </div>
+
+          <div class="home-interests">
+            <h3 class="home-interests-title">Interests</h3>
+            <div class="home-interest-list">
+              <div class="home-interest-row">
+                <span class="home-interest-label">Core ML</span>
+                <div class="home-interest-topics">
+                  <span>Vision models</span>
+                  <span>MoE</span>
+                  <span>Multimodal learning</span>
+                </div>
+              </div>
+              <div class="home-interest-row">
+                <span class="home-interest-label">Inference</span>
+                <div class="home-interest-topics">
+                  <span>KV caching</span>
+                  <span>Speculative decoding</span>
+                  <span>Efficient serving</span>
+                </div>
+              </div>
+              <div class="home-interest-row">
+                <span class="home-interest-label">Applied AI</span>
+                <div class="home-interest-topics">
+                  <span>Agent memory</span>
+                  <span>Benchmarks</span>
+                  <span>Vector databases</span>
+                  <span>RAG</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
 
       <!-- Experience -->
@@ -443,11 +640,19 @@
       var navLinks = Array.prototype.slice.call(document.querySelectorAll(".sidebar-nav a"));
       var panels = Array.prototype.slice.call(document.querySelectorAll(".content-panel"));
       var panelIds = panels.map(function (panel) { return panel.id; });
+      var homeExtras = document.querySelector(".home-extras");
 
       function activate(id, updateHash) {
         panels.forEach(function (panel) {
           panel.classList.toggle("is-active", panel.id === id);
         });
+
+        // Building & Contributing is visible only while the About panel is active.
+        if (homeExtras) {
+          homeExtras.hidden = id !== "about";
+          homeExtras.setAttribute("aria-hidden", id !== "about" ? "true" : "false");
+        }
+
         navLinks.forEach(function (link) {
           link.classList.toggle("active", link.getAttribute("href") === "#" + id);
         });
