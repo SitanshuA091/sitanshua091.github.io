@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="style.css?v=12" />
 
   <script>
     (function () {
@@ -47,7 +47,6 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
         <a href="#education">Education</a>
       </nav>
 
@@ -72,7 +71,7 @@
     <main class="page-shell" id="page-shell">
 
       <!-- About -->
-      <section class="intro section" id="about">
+      <section class="intro section content-panel is-active" id="about">
         <div class="intro-top">
           <div class="intro-identity">
             <img
@@ -129,13 +128,28 @@
         <div class="intro-copy">
           <div class="section-heading"><h2>About</h2></div>
           <p>
-            Hey, I'm Sitanshu, a Digital Engineer at Sonata Software and a 2023 B.Tech Graduate, born in New Delhi. On the side, I build in AI/ML, exploring agents and applied AI, with a soft spot for multimodal learning, inference and also the infrastructure side : tooling and libraries behind ML. Outside tech, I also edit videos.
+            Hey, I'm Sitanshu, a Digital Engineer at Sonata Software and a 2023 B.Tech Graduate, born in New Delhi. On the side, I build in AI/ML, exploring agents with core interests in multimodal learning, inference and also the infra side - tooling and libraries behind ML. Outside of this I edit videos.
           </p>
+        </div>
+
+        <div class="about-skills">
+          <div class="section-heading"><h2>Skills</h2></div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">SQL</span>
+          </div>
         </div>
       </section>
 
       <!-- Experience -->
-      <section class="section" id="experience">
+      <section class="section content-panel" id="experience">
         <div class="section-heading"><h2>Experience</h2></div>
 
         <article class="experience-block">
@@ -196,7 +210,7 @@
       </section>
 
       <!-- Projects -->
-      <section class="section" id="projects">
+      <section class="section content-panel" id="projects">
         <div class="section-heading"><h2>Projects</h2></div>
 
         <div class="project-grid">
@@ -334,51 +348,8 @@
         </div>
       </section>
 
-      <!-- Skills -->
-       <section class="section" id="skills">
-        <div class="section-heading">
-          <h2>Skills</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skills-group">
-            <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">C++</span>
-              <span class="skill-tag">C</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">Docker</span>
-            </div>
-          </div>
-          
-          <div class="skills-group">
-            <div class="skill-tags">
-              <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">Transformers</span>
-              <span class="skill-tag">LangGraph</span>
-              <span class="skill-tag">LangChain</span>
-              <span class="skill-tag">Pandas</span>
-              <span class="skill-tag">NumPy</span>
-            </div>
-          </div>
-          
-          <div class="skills-group">
-            <div class="skill-tags">
-              <span class="skill-tag">FastAPI</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">Neo4j</span>
-              <span class="skill-tag">Pytest</span>
-              <span class="skill-tag">Weights &amp; Biases</span>
-            </div>
-          </div>
-        </div>
-      </section>
-       
-
       <!-- Education -->
-      <section class="section" id="education">
+      <section class="section content-panel" id="education">
         <div class="section-heading"><h2>Education</h2></div>
         <article class="education-block">
           <div class="item-header">
@@ -390,17 +361,16 @@
           </div>
           <p class="location">Bhubaneswar, Odisha</p>
         </article>
-      </section>
 
-      <!-- More -->
-      <section class="section profiles-section">
-        <div class="section-heading"><h2>More</h2></div>
-        <div class="profile-links">
-          <a href="https://huggingface.co/SA0901" target="_blank" rel="noreferrer">HuggingFace<span>↗</span></a>
-          <a href="https://www.kaggle.com/sitanshuanmol" target="_blank" rel="noreferrer">Kaggle <span>↗</span></a>
-          <a href="https://www.hackerrank.com/profile/sitanshu_anmol" target="_blank" rel="noreferrer">Hackerrank <span>↗</span></a>
-          <a href="https://www.youtube.com/@SA0901-i3u" target="_blank" rel="noreferrer">YouTube <span>↗</span></a>
-        </div>
+        <section class="section profiles-section">
+          <div class="section-heading"><h2>More</h2></div>
+          <div class="profile-links">
+            <a href="https://huggingface.co/SA0901" target="_blank" rel="noreferrer">HuggingFace<span>↗</span></a>
+            <a href="https://www.kaggle.com/sitanshuanmol" target="_blank" rel="noreferrer">Kaggle <span>↗</span></a>
+            <a href="https://www.hackerrank.com/profile/sitanshu_anmol" target="_blank" rel="noreferrer">Hackerrank <span>↗</span></a>
+            <a href="https://www.youtube.com/@SA0901-i3u" target="_blank" rel="noreferrer">YouTube <span>↗</span></a>
+          </div>
+        </section>
       </section>
 
       <footer><p>© 2026 Sitanshu Anmol</p></footer>
@@ -476,50 +446,39 @@
       }
     })();
 
-    // Sidebar active section tracking
+    // Sidebar tab switching — clicking a section shows it instantly, no scrolling needed
     (function () {
-      var links = document.querySelectorAll(".sidebar-nav a");
-      var sections = [];
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll(".sidebar-nav a"));
+      var panels = Array.prototype.slice.call(document.querySelectorAll(".content-panel"));
+      var panelIds = panels.map(function (panel) { return panel.id; });
 
-      links.forEach(function (link) {
-        var target = document.getElementById(link.getAttribute("href").slice(1));
-        if (target) sections.push({ link: link, target: target });
-      });
-
-      function setActive(link) {
-        links.forEach(function (item) {
-          item.classList.remove("active");
+      function activate(id, updateHash) {
+        panels.forEach(function (panel) {
+          panel.classList.toggle("is-active", panel.id === id);
         });
-        link.classList.add("active");
+        navLinks.forEach(function (link) {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+        });
+        if (updateHash) {
+          history.replaceState(null, "", "#" + id);
+        }
       }
 
-      function update() {
-        if (!sections.length) return;
-
-        var atBottom =
-          window.innerHeight + window.scrollY >=
-          document.documentElement.scrollHeight - 4;
-
-        if (atBottom) {
-          setActive(sections[sections.length - 1].link);
-          return;
-        }
-
-        var current = sections[0];
-        var line = window.innerHeight * 0.35;
-
-        sections.forEach(function (item) {
-          if (item.target.getBoundingClientRect().top <= line) {
-            current = item;
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          var id = link.getAttribute("href").slice(1);
+          if (panelIds.indexOf(id) !== -1) {
+            activate(id, true);
           }
         });
+      });
 
-        setActive(current.link);
+      var initial = window.location.hash.replace("#", "");
+      if (!initial || panelIds.indexOf(initial) === -1) {
+        initial = "about";
       }
-
-      window.addEventListener("scroll", update, { passive: true });
-      window.addEventListener("resize", update);
-      update();
+      activate(initial, false);
     })();
   </script>
 
