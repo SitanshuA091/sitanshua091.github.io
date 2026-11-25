@@ -43,28 +43,24 @@
 }
 html[data-theme="light"] {
   color-scheme: light;
-  --background: #fff;
-  --surface: rgba(255, 255, 255, 0.6);
-  --soft-background: #f6f7f8;
+  --background: #faf7f2;
+  --card-bg: #ffffff;
+  --surface: rgba(255, 255, 255);
+  --soft-background: #ffffff;
   --text: rgba(26, 28, 31, 0.92);
   --text-strong: rgba(59, 62, 67, 0.92);
   --body-text: rgba(59, 62, 67, 0.88);
   --muted: rgba(98, 102, 109, 0.9);
   --light-muted: rgba(138, 142, 149, 0.9);
   --heading-color: rgba(26, 28, 31, 0.9);
-  --border: #e6e7e9;
-  --border-strong: #cdd0d4;
+  --border: #e3ddd2;
+  --border-strong: #cfc6b5;
   --role-line: #d8d9db;
   --accent: #2b5a86;
   --accent-soft: #eef3f8;
   --accent-border: #d3e0ec;
   --link-hover: #1b3f61;
   --shadow: 0 6px 20px rgba(20, 24, 30, 0.06);
-  --card-bg: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.92),
-    rgba(255, 255, 255, 0.6)
-  );
   --card-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
     0 1px 2px rgba(20, 24, 30, 0.04),
@@ -73,8 +69,8 @@ html[data-theme="light"] {
     inset 0 1px 0 rgba(255, 255, 255, 1),
     0 2px 4px rgba(20, 24, 30, 0.05),
     0 20px 44px rgba(20, 40, 90, 0.16);
-  --ring-1: #2f6fe0;
-  --ring-2: #18b394;
+  --ring-1: #d7a86e;
+  --ring-2: #b5651d;
 }
 /* =========================
    Base
@@ -368,41 +364,13 @@ body::before {
     );
 }
 html[data-theme="light"] body {
-  background: linear-gradient(180deg, #fff 0%, #eaf2ff 100%);
+  background: var(--background);
 }
 html[data-theme="light"] .page-shell::before {
   display: none;
 }
 html[data-theme="light"] body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      rgba(40, 70, 130, 0.28) 1.02px,
-      transparent 1.6px
-    ) 0 0 / 22px 22px,
-    radial-gradient(
-      ellipse 90vw 55vh at 50% 105%,
-      rgba(55, 120, 240, 0.3),
-      transparent 100%
-    );
-  -webkit-mask-image: radial-gradient(
-    ellipse at 50% 40%,
-    #000 0%,
-    rgba(0, 0, 0, 0.85) 35%,
-    rgba(0, 0, 0, 0.4) 60%,
-    transparent 90%
-  );
-  mask-image: radial-gradient(
-    ellipse at 50% 40%,
-    #000 0%,
-    rgba(0, 0, 0, 0.85) 35%,
-    rgba(0, 0, 0, 0.4) 55%,
-    transparent 90%
-  );
+  display: none;
 }
 /* =========================
    Sections
@@ -810,7 +778,7 @@ li:last-child {
   border-radius: 10px;
 }
 html[data-theme="light"] .project-media {
-  background: var(--tint, var(--soft-background));
+  background: #ffffff;
 }
 .project-media img {
   display: block;
@@ -1315,21 +1283,8 @@ footer {
     border-bottom: 1px solid var(--border);
   }
   .intro::after {
-    content: "";
-    position: absolute;
-    top: 48%;
-    right: 4%;
-    width: clamp(220px, 28vw, 360px);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(220, 233, 234, 0.85) 1px, transparent 1.55px) 0 0 / 7px 7px;
-    opacity: 0.48;
-    transform: translateY(-50%) rotate(14deg);
-    -webkit-mask-image: radial-gradient(ellipse at 52% 48%, #000 0 48%, transparent 72%);
-    mask-image: radial-gradient(ellipse at 52% 48%, #000 0 48%, transparent 72%);
-    filter: drop-shadow(0 0 28px rgba(174, 207, 209, 0.08));
-    pointer-events: none;
-  }
+    top: 30%;
+}
   .intro-top,
   .intro-copy {
     position: relative;
@@ -1404,10 +1359,12 @@ footer {
     text-transform: uppercase;
   }
   .project-card {
-    background: rgba(255, 255, 255, 0.025);
     border-radius: 13px;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+  }
+  html:not([data-theme="light"]) .project-card {
+    background: rgba(255, 255, 255, 0.025);
   }
   .project-media {
     border-radius: 8px;
@@ -1756,7 +1713,29 @@ h1 {
     grid-row: span 2;
   }
 }
-
+.page-shell::after {
+  content: "";
+  position: fixed;
+  top: 18%;
+  right: 6%;
+  z-index: -1;
+  width: clamp(220px, 28vw, 360px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 233, 234, 0.85) 1px, transparent 1.55px) 0 0 / 7px 7px;
+  opacity: 0.48;
+  transform: rotate(14deg);
+  -webkit-mask-image: radial-gradient(ellipse at 52% 48%, #000 0 48%, transparent 72%);
+  mask-image: radial-gradient(ellipse at 52% 48%, #000 0 48%, transparent 72%);
+  filter: drop-shadow(0 0 28px rgba(174, 207, 209, 0.08));
+  pointer-events: none;
+  display: none;
+}
+@media (min-width: 861px) {
+  .page-shell::after {
+    display: block;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .intro .home-activity-item {
     transition: none;
